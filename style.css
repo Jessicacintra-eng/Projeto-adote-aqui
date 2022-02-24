@@ -25,15 +25,15 @@ header {
     height: 100px;
     background-color: rgba(222, 184, 135, 0.575);
     width: 100%;
-}
+} 
 
 nav {
     display: flex;
     flex-direction: row;
     justify-content: right;
     width: 40%;
- 
-    padding:0 50px;
+
+    padding: 0 50px;
     font-weight: 400;
 
 }
@@ -42,7 +42,7 @@ a {
     text-decoration: none;
     color: sandybrown;
     padding: 0 5px;
-    
+
 }
 
 mark {
@@ -50,19 +50,30 @@ mark {
     border-radius: 5px;
     padding: 1px;
 }
-ul{
+
+ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
     flex-wrap: wrap;
-    
+
 }
+
 li {
     display: list-item;
     text-align: -webkit-match-parent;
     list-style-type: none;
+    transition: all 0.3s;
 }
+li:nth-child(odd){
+    font-weight: 400;
+}
+li:hover{
+    font-size: x-large;
+
+}
+
 .logo {
     background-color: none;
     width: 10%;
@@ -80,26 +91,144 @@ li {
     filter: contrast(5%);
 
 }
-@media (max-width:700px){
-    .logo{
-        display:none;
+img{
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width:700px) {
+    .logo {
+        display: none;
     }
-    ul{
+
+    ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
         font-size: large;
     }
-    header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height:100%;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 10%;
     }
-    nav{
+
+    nav {
         justify-content: center;
     }
+     main{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-around;
+     }
 }
-@media (max-width:) {
+
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+    height: 80%;
+}
+.flipcard {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+.conteudodedentro {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flipcard:hover .conteudodedentro {
+    transform: rotateY(180deg);
+  }
+  
+  .conteudodafrente, .conteudodetras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .conteudodafrente {
+    background-color: #bbb;
+    color: black;
     
+  }
+  
+  .conteudodetras {
+    background-color: #cab762;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+  }
+  
+  
+.card1{
+    width : 300px;
+    height : 100px;
+}
+.card2{
+    width : 300px;
+    height : 100px;
+   
+}
+
+
+footer {
+    background-color:  rgba(222, 184, 135, 0.575);
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    width: 100%;
+    font-size: small;
+    padding-right: 50px;
+   padding-bottom: 10px;
+}
+
+span [data-descr] {
+    position: relative;
+    text-decoration: underline;
+    color: #00F;
+    cursor: help;
+}
+
+/* h5{
+    position:relative;
+} */
+span[data-descr]:hover::after {
+    content: attr(data-descr);
+    position: relative;
+    left: 35px;
+    right:50px;
+    top: 24px;
+    bottom:50px;
+    min-width: 50px;
+    border: 1px #aaaaaa solid;
+    background-color: #ffffccde;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+
+
+}
+
+h4::after {
+    content: "©";
+    color: black;
 }
